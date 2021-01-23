@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class MainDrive {
 
 	public static void main(String[] args) {
+		
+//		미리 당첨번호를 설정.
+		int[] winNumbers = {9, 18, 19, 30, 34, 40};
+//		보너스번호 : 5개 맞춘 경우에만 활용.
+		int bonusNum = 20;
 
 		Scanner scan = new Scanner(System.in);
 
