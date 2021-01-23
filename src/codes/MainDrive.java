@@ -110,10 +110,53 @@ public class MainDrive {
 		for (int myNum : myLottoNums) {
 			System.out.println(myNum);
 		}
+		
+		
+//		내가 입력한 숫자들과, 당첨번호들을 비교 => 몇개 맞췄는지? 결과로 획득.
+		int correctNumCount = 0;
+		
+//		내 번호 하나 : 당첨번호 6개와 비교.
+		for (int myNum : myLottoNums) {
+			
+//			당첨번호 6개 반복
+			for (int winNum : winNumbers) {
+				
+//				내 번호와 당첨번호가 같은가? => 같다면? 숫자 하나 맞췄다!
+				if (myNum == winNum) {
+					
+//					맞춘 숫자 갯수 증가
+					correctNumCount++;
+				}
+				
+			}
+			
+		}
+		
+//		맞춘 숫자가 몇개인지 기록되어있다. correctNumCount에.
+//		이 갯수를 가지고 등수 판단
+		
+		if (correctNumCount == 6) {
+			System.out.println("1등");
+		}
+		else if (correctNumCount == 5) {
+//			보너스번호 맞췄는지? 추가검사.
+		}
+		else if (correctNumCount == 4) {
+			System.out.println("4등");
+		}
+		else if (correctNumCount == 3) {
+			System.out.println("5등");
+		}
+		else {
+			System.out.println("꽝");
+		}
+		
 
 	}
 
 }
+
+
 
 
 
