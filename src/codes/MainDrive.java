@@ -37,6 +37,11 @@ public class MainDrive {
 //					다음 자리의 숫자를 받으러 이동.
 					break;
 				}
+				else {
+//					검사에 실패한 경우.
+//					안내메세지도 보여주자.
+					System.out.println("잘못된 숫자입니다. 다시 입력해주세요.");
+				}
 				
 			}
 
