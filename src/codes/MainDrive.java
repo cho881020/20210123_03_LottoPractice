@@ -22,6 +22,13 @@ public class MainDrive {
 		}
 		
 		
+//		저장된 값들 출력
+		
+		for (int myNum : myLottoNums) {
+			System.out.println(myNum);
+		}
+		
+		
 	}
 
 }
