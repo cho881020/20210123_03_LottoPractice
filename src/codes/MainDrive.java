@@ -70,6 +70,36 @@ public class MainDrive {
 
 		}
 
+		
+//		응용문제 2 - 입력된 값들을 작은값부터로 정리하기.
+		
+//		2-1 Bubble Sort
+//		가로로 2개씩 비교해서, 자리바꿈 for - 빠른 for : j
+//		총 6번 이 과정을 반복하게하는 for - 느린 for : i
+		
+		for (int i=0 ; i < myLottoNums.length ; i++) {
+			
+//			배열의 j+1 번칸 까지 접근 : 하나 덜 가야 안전하다. 
+//			(j=5가 된다면, j+1은 6이라서, 배열범위 벗어남 에러) 
+			for (int j=0 ; j < myLottoNums.length-1 ; j++) {
+				
+//				ex. j: 0,  배열0번칸/배열1번칸 비교 => 바꿔야 하면 바꾸자.
+//				ex. j: 1,  배열1번칸/배열2번칸 비교 => 바꿔야 하면 바꾸자.
+				if (myLottoNums[j] > myLottoNums[j+1]) {
+//					앞의 숫자가 더 크다!
+//					잘못된 자리므로 서로 바꿔주자.
+
+//					변수 응용문제 => 변수 값 교환 로직 재사용.
+					int backUp = myLottoNums[j];
+					myLottoNums[j] = myLottoNums[j+1];
+					myLottoNums[j+1] = backUp;
+					
+				}
+				
+			}
+			
+		}
+		
 //		저장된 값들 출력
 
 		for (int myNum : myLottoNums) {
