@@ -22,10 +22,29 @@ public class MainDrive {
 				System.out.print((i + 1) + "번째 로또 번호 입력 : ");
 				int inputNum = scan.nextInt();
 
-				//				입력해도 되는 숫자인지? 검사하고
+//				입력해도 되는 숫자인지? 검사하고
 //				검사 1. 입력받은 숫자가 1 ~ 45 사이의 값인가?
 //				1 ~ 45 사이: 1보다는 크거나 같고, 동시에, 45보다는 작거나 같다.
 				boolean isRangeOk = (1 <= inputNum && inputNum <= 45);
+				
+//				추가검사 : 중복인지 아닌지.
+//				중복인가? => 내가 입력한 숫자가 => 이미 배열안에 들어있다면? 중복 (사용 불가)
+				
+//				중복검사 결과
+//				써도 괜찮다고 했다가 => 같은 숫자를 발견한다면, 쓰면 안된다고 말을 변경.
+				boolean isDuplOk = true;
+				
+//				배열 안의 숫자를 모두 꺼내보자.
+				for (int myNum : myLottoNums) {
+//					입력한 값과 myNum이 같은지? => 같다면 중복검사 탈락.
+					if (inputNum == myNum) {
+//						중복값 발견! 검사 탈락처리.
+						isDuplOk = false;
+						
+//						중복 확정되면 for문 종료.
+						break;
+					}
+				}
 				
 //				그 결과가 OK일때만
 				if (isRangeOk) {
